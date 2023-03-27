@@ -1,31 +1,31 @@
 const Model = require('../models/model');
 
 class UsersModel extends Model {
-    constructor(){
-        super('tbl_users');
+    constructor() {
+        super('tbl_music');
     }
 }
 
-class BusinessModel  extends Model {
-   constructor(){
+class BusinessModel extends Model {
+    constructor() {
         super('tbl_business');
-   }
+    }
 }
 
 class TypesModel extends Model {
-    constructor(){
+    constructor() {
         super('tbl_bus_types');
     }
 }
 
 class CategoryModel extends Model {
-    constructor(){
+    constructor() {
         super('tbl_bus_category');
     }
 }
 
-class AdminModel extends Model{
-    constructor(){
+class AdminModel extends Model {
+    constructor() {
         super('tbl_admin');
     }
 }

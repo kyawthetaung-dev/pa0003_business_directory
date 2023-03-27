@@ -37,21 +37,21 @@ app.use(function(err, req, res, next) {
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-<<<<<<< Updated upstream
-  // render the error page
-  res.status(err.status || 500);
-  // res.render('error');
-  var frm = {
-    "code" : err.status,
-    "message": err.message,
-    "details": err.stack
-  }
-  apiResponse.internalServerErrorResponse(req, res, frm);
-=======
-    // render the error page
-    res.status(err.status || 500);
-    res.render('error');
->>>>>>> Stashed changes
+    // <<<<<<< Updated upstream
+    //   // render the error page
+    //   res.status(err.status || 500);
+    //   // res.render('error');
+    //   var frm = {
+    //     "code" : err.status,
+    //     "message": err.message,
+    //     "details": err.stack
+    //   }
+    //   apiResponse.internalServerErrorResponse(req, res, frm);
+    // =======
+    //     // render the error page
+    //     res.status(err.status || 500);
+    //     res.render('error');
+    // >>>>>>> Stashed changes
 });
 
 app.listen(port, () => {

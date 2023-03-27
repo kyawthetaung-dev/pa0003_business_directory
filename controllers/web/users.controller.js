@@ -5,13 +5,11 @@ var apiResponse = require('../../utils/apiResponses');
 exports.createUser = (req, res) => {
     var body = req.body;
     var data = {
-        username: body.username,
-        fullname: body.fullname,
-        password: common.encryptPassword(body.password),
-        email: body.email,
-        phone: body.phone,
-        status: body.status,
-        createdAt: common.now()
+        music_name: body.music_name,
+        music_image: body.music_image,
+        album_id: body.album_id,
+        music_files: body.music_files,
+        created_at: now()
     };
     var results = UserModel.create(data);
     results.then((value) => {
@@ -21,11 +19,11 @@ exports.createUser = (req, res) => {
     });
 }
 
-exports.UserList = async (req, res) => {
+exports.UserList = async(req, res) => {
     var Userlist = await UserModel.get_all();
-    if(Userlist){
+    if (Userlist) {
         apiResponse.successResponse(req, res, "User List", common.prettifyArray(Userlist));
-    }else{
+    } else {
         apiResponse.errorResponse(req, res, `Error!`);
     }
 }
@@ -57,4 +55,3 @@ exports.deleteUser = (req, res) => {
         apiResponse.errorResponse(req, res, err);
     });
 }
-
